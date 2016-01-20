@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "initialStatusBarStyle": {
+      "description": "Initial style of the iOS status bar when the top bar is loaded.",
+      "required": true,
+      "type": "string"
+    }
+  }
+}

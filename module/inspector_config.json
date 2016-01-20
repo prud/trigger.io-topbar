@@ -1,7 +1,8 @@
 {
-	"this_module": {
-		"config": {}
-	},
-	"modules": {
-	}
+  "this_module": {
+    "config": {
+      "initialStatusBarStyle": "default"
+    }
+  },
+  "modules": {}
 }

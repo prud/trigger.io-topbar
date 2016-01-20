@@ -40,6 +40,11 @@ UINavigationBar *topbar;
 @implementation topbar_EventListener
 
 + (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // set initial default style
+    if ([[[[ForgeApp sharedApp] configForModule:@"topbar"] objectForKey:@"initialStatusBarStyle"] isEqualToString:@"light_content"]) {
+        topbar_statusBarStyle = UIStatusBarStyleLightContent;
+    }
+
 	// Create the topbar
     if ([topbar_Util iPad2Bug]) {
         topbar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0.0f, [ForgeApp sharedApp].webviewTop, 320.0f, 24.0f)];
