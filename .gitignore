@@ -1,4 +1,6 @@
 .trigger
+.DS_Store
+.project
 identity.json
 inspector/an-inspector.*
 inspector/ios-inspector.*
