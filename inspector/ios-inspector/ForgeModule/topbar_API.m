@@ -53,7 +53,7 @@ static bool hidden = NO;
 }
 
 + (void)hide:(ForgeTask*)task {
-	if (!hidden) {
+    if (!hidden) {
         // Resize webview
         if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
             [[ForgeApp sharedApp] webView].frame = CGRectMake([[ForgeApp sharedApp] webView].frame.origin.x, [[ForgeApp sharedApp] webView].frame.origin.y - topbar.frame.size.height, [[ForgeApp sharedApp] webView].frame.size.width, [[ForgeApp sharedApp] webView].frame.size.height + topbar.frame.size.height);
@@ -73,16 +73,16 @@ static bool hidden = NO;
             [webView.scrollView setScrollIndicatorInsets:newInset];
         }
 
-		[topbar setHidden:YES];
+        [topbar setHidden:YES];
 
         if ([topbar_Util iPad2Bug]) {
             // do nothing
         } else {
             [[ForgeApp sharedApp] showStatusBarBox];
         }
-		hidden = YES;
-	}
-	[task success:nil];
+        hidden = YES;
+    }
+    [task success:nil];
 }
 
 + (void)setTitle:(ForgeTask*)task title:(NSString*)title {

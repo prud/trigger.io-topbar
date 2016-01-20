@@ -10,6 +10,7 @@
 #import "topbar_EventListener.h"
 #import "topbar_Delegate.h"
 #import "topbar_Util.h"
+#import "topbar_API.h"
 
 UIStatusBarStyle topbar_statusBarStyle = UIStatusBarStyleDefault;
 UINavigationBar *topbar;
@@ -85,6 +86,12 @@ UINavigationBar *topbar;
 	// Add topbar to view
 	[[[ForgeApp sharedApp] viewController].view insertSubview:topbar aboveSubview:[ForgeApp sharedApp].webView];
 	[[ForgeApp sharedApp] hideStatusBarBox];
+
+    // set initial default style
+    if ([[[[ForgeApp sharedApp] configForModule:@"topbar"] objectForKey:@"initialHidden"] intValue] == 1) {
+        ForgeTask *task;
+        [topbar_API hide:task];
+    }
 }
 
 + (void) preFirstWebViewLoad {

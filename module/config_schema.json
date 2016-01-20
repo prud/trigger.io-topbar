@@ -6,6 +6,11 @@
       "description": "Initial style of the iOS status bar when the top bar is loaded.",
       "required": true,
       "type": "string"
+    },
+    "initialHidden": {
+      "description": "Whether the status bar should be initially shown or not on iOS.",
+      "required": false,
+      "type": "boolean"
     }
   }
 }
